@@ -1,3 +1,10 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: wheat;
+}
+
 #container {
     display: flex;
     justify-content: center;
@@ -5,9 +12,108 @@
     height: 100%;
 }
 
-html, body {
-    height: 100%;
+#main {
+    width: 30%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+h1 {
     margin: 0;
-    padding: 0;
-    background-color: wheat;
+}
+
+#settings {
+    background-color: #000;
+    color: #FFF;
+    width: 100%;
+}
+
+#settings-heading {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#settings-heading .session {
+    margin-right: 30px;
+}
+
+#settings-input {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 40px;
+}
+
+#settings-input div {
+    font-size: 1.5em;
+}
+
+#session-minute {
+    text-align: center;
+    width: 60px;
+}
+
+#break-minute {
+    text-align: center;
+    width: 60px;
+}
+
+.button {
+    cursor: pointer;
+}
+
+#clock {
+    margin-top: 15px;
+    background-color: #000;
+    color: #FFF;
+    width: 100%;
+    padding: 5px 0;
+}
+
+#start-stop-reset-btns {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 40px;
+}
+
+#pause-stop-btns {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 40px;
+}
+
+#timer {
+    text-align: center;
+}
+
+#timer div {
+    margin-bottom: 5px;
+}
+
+.session {
+    margin: 0;
+}
+
+#time {
+    margin: 0;
+    font-size: 4em;
+}
+
+#start {
+    margin-left: -45px;
+}
+
+#reset {
+    margin-right: -50px;
+}
+
+#pause {
+    margin-left: -45px;
+}
+
+#stop {
+    margin-right: -50px;
 }

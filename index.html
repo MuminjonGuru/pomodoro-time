@@ -3,11 +3,45 @@
 <head>
     <title>Pomodoro Project by MuminjonGuru</title>
     <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
     <meta charset="UTF-8">
 </head>
 <body>
     <div id="container">
+        <div id="main">
+            <h1>Pomodoro Technique</h1>    
+            <div id="settings">
+                <div id="settings-heading">
+                    <div class="session"><h3>Session</h3></div>
+                    <div><h3>Break</h3></div>
+                </div>
+                <div id="settings-input">
+                    <i id="increase-session" class="fa fa-angle-up fa-2x button" title="Increase Session"></i>
+                    <div id="session-minute"></div>
+                    <i id="decrease-session" class="fa fa-angle-down fa-2x button" title="Decrease Session"></i>
+                    <i id="increase-break" class="fa fa-angle-up fa-2x button" title="Increase Break"></i>
+                    <div id="break-minute"></div>
+                    <i id="decrease-break" class="fa fa-angle-down fa-2x button" title="Decrease Break"></i>
+                </div>
+            </div>
 
+            <div id="clock">
+                <div id="start-stop-reset-btns">
+                    <i id="start" class="fa fa-play fa-2x button" title="Start Clock"></i>
+                    <i id="reset" class="fa fa-sync-alt fa-2x button" title="Stop Clock & Reset Session & Break to 25 & 5"></i>
+                </div>
+                <div id="timer">
+                    <div><h2 class="session" id="mode-indicator">Session</h2></div>
+                    <div id="time"></div>
+                </div>
+                <div id="pause-stop-btns">
+                    <i id="pause" class="fa fa-pause fa-2x button" title="Pause Clock"></i>
+                    <i id="stop" class="fa fa-stop fa-2x button" title="Stop Clock"></i>
+                </div>
+            </div>
+        </div>
     </div>
+    <script src="script.js"></script>
 </body>
 </html>
