@@ -5,21 +5,38 @@ html, body {
     background-color: wheat;
 }
 
-#container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
+body {
+    background-color: #193c6d;
+    filter: progid: DXImageTransform.Microsoft.gradient(gradientType=1, startColorstr='#003073', endColorstr='#029797');
+    background-image: url(//img.alicdn.com/tps/TB1d.u8MXXXXXXuXFXXXXXXXXXX-1900-790.jpg);
+    background-size: 100%;
+    background-image: -webkit-gradient(linear, 0 0, 100% 100%, color-stop(0, #003073), color-stop(100%, #029797));
+    background-image: -webkit-linear-gradient(135deg, #003073, #029797);
+    background-image: -moz-linear-gradient(45deg, #003073, #029797);
+    background-image: -ms-linear-gradient(45deg, #003073 0, #029797 100%);
+    background-image: -o-linear-gradient(45deg, #003073, #029797);
+    background-image: linear-gradient(135deg, #003073, #029797);
+    text-align: center;
+    margin: 0px;
+    overflow: hidden;
 }
 
 #main {
-    width: 30%;
+    width: 50%;
     margin: 0 auto;
     text-align: center;
 }
 
 h1 {
     margin: 0;
+    
+}
+
+#container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
 }
 
 #settings {
@@ -49,6 +66,24 @@ h1 {
     font-size: 1.5em;
 }
 
+#start-stop-reset-btns {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 40px;
+}
+
+#pause-stop-btns {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 40px;
+}
+
+#timer {
+    text-align: center;
+}
+
 #session-minute {
     text-align: center;
     width: 60px;
@@ -71,22 +106,20 @@ h1 {
     padding: 5px 0;
 }
 
-#start-stop-reset-btns {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    height: 40px;
+#start {
+    margin-left: -35px;
 }
 
-#pause-stop-btns {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    height: 40px;
+#reset {
+    margin-right: -45px;
 }
 
-#timer {
-    text-align: center;
+#pause {
+    margin-left: -35px;
+}
+
+#stop {
+    margin-right: -45px;
 }
 
 #timer div {
@@ -99,21 +132,5 @@ h1 {
 
 #time {
     margin: 0;
-    font-size: 4em;
-}
-
-#start {
-    margin-left: -45px;
-}
-
-#reset {
-    margin-right: -50px;
-}
-
-#pause {
-    margin-left: -45px;
-}
-
-#stop {
-    margin-right: -50px;
+    font-size: 5em;
 }
