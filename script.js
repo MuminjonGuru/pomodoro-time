@@ -45,6 +45,50 @@ function changeSessionTime(e) {
     updateTimerDisplay();
 }
 
+function pauseTimer(e) {
+    if (e.target.id === "pause") {
+        clearInterval(intervalID, 1000);
+        mainBody.addEventListener("click", startTimer);
+    } 
+}
+
+function startTimer(e) {
+    if (e.target.id === "start") {
+        intervalID = setInterval(updateTime, 1000);
+
+        mainBody.removeEventListener("click", changeSessionTime);
+        mainBody.removeEventListener("click", changeBreakTime);
+        mainBody.removeEventListener("click", startTimer);
+    }
+}
+
+function stopTimer(e) {
+    if (e.target.id === "stop") {
+        clearInterval(intervalID);
+        convertNumberToTimer(sessionValue);
+        updateTimerDisplay();
+        modeIndicator.textContent = "Session";
+        displayTime.removeAttribute("style");
+
+        mainBody.addEventListener("click", changeSessionTime);
+        mainBody.addEventListener("click", changeBreakTime);
+        mainBody.addEventListener("click", startTimer);
+        clearInterval(repeatBeep);
+        NumberOfBeeps = 0;
+    }
+}
+
+function updateTime() {
+    timeArray = timeValue.split(":");
+    hour = Math.floor(sessionValue / 60);
+
+    countdownTimer();
+    timeValue = timeArray.join(":");
+    updateTimerDisplay();
+    colorTimer();
+    switchTimerMode();
+}
+
 function changeBreakTime(e) {
     const incrementBreak = () => breakValue += 1;
     const decrementBreak = () => breakValue -= 1;
@@ -105,50 +149,6 @@ function convertNumberToTimer(number) {
     }
     timeValue = timeArr.join(":");
     return timeValue;
-}
-
-function pauseTimer(e) {
-    if (e.target.id === "pause") {
-        clearInterval(intervalID, 1000);
-        mainBody.addEventListener("click", startTimer);
-    } 
-}
-
-function startTimer(e) {
-    if (e.target.id === "start") {
-        intervalID = setInterval(updateTime, 1000);
-
-        mainBody.removeEventListener("click", changeSessionTime);
-        mainBody.removeEventListener("click", changeBreakTime);
-        mainBody.removeEventListener("click", startTimer);
-    }
-}
-
-function stopTimer(e) {
-    if (e.target.id === "stop") {
-        clearInterval(intervalID);
-        convertNumberToTimer(sessionValue);
-        updateTimerDisplay();
-        modeIndicator.textContent = "Session";
-        displayTime.removeAttribute("style");
-
-        mainBody.addEventListener("click", changeSessionTime);
-        mainBody.addEventListener("click", changeBreakTime);
-        mainBody.addEventListener("click", startTimer);
-        clearInterval(repeatBeep);
-        NumberOfBeeps = 0;
-    }
-}
-
-function updateTime() {
-    timeArray = timeValue.split(":");
-    hour = Math.floor(sessionValue / 60);
-
-    countdownTimer();
-    timeValue = timeArray.join(":");
-    updateTimerDisplay();
-    colorTimer();
-    switchTimerMode();
 }
 
 function countdownTimer() {
